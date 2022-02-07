@@ -4,14 +4,15 @@ import { Route, Routes } from "react-router-dom";
 import Search from "./Search"
 import Homes from "./Homes"
 import React ,{useState} from "react"
+import { Abc } from './arrayMap';
 function App() {
 
-  const [navbar,setNavbar] = useState()
+  const [navbar,setNavbar] = useState('welcome')
 
   const changeName = () => {
     let val = navbar;
-    (val >24) ? 
-    setNavbar('home') : setNavbar(25) 
+    (val === 'welcome') ? 
+    setNavbar('home') : setNavbar('welcome') 
   }
 
 
@@ -29,7 +30,7 @@ function App() {
        
          */}
       
-
+      <Abc />
 
     </div>
   );
