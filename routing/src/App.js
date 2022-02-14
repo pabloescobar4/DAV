@@ -5,15 +5,18 @@ import Search from "./Search"
 import Homes from "./Homes"
 import React ,{useState} from "react"
 import { Abc } from './arrayMap';
+import { Temp } from './components/temp.jsx'
+
 function App() {
 
-  const [navbar,setNavbar] = useState('welcome')
+  const [navbar,setNavbar] = useState('+')
 
   const changeName = () => {
     let val = navbar;
-    (val === 'welcome') ? 
-    setNavbar('home') : setNavbar('welcome') 
+    (val === '+') ? 
+    setNavbar('-') : setNavbar('+') 
   }
+ 
 
 
   return (
@@ -31,6 +34,7 @@ function App() {
          */}
       
       <Abc />
+      <Temp />
 
     </div>
   );
