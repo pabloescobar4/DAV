@@ -1,0 +1,33 @@
+
+<script>
+"use strict"
+	// 1. global object
+console.log(this)
+
+
+// 2. function object which is also a global object
+function sum(){
+	var add = 2+2
+	console.log(add)
+	console.log(this)
+}
+sum()
+
+// 3.if we use in a object 
+const abc = {
+	name:"dheeraj",
+	age:25,
+	sum: function (){
+		let sub = 5-2
+		console.log(sub)
+		console.log(this.name)
+		console.log(this.age)
+	}
+}
+
+
+abc.sum()
+
+
+
+</script>
