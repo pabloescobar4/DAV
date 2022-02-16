@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="./Style/style.css">
+<body>
+    <h1>Inheritence</h1>
+    <div id="navbar"></div>
+  <!-- <h1>Import & Export</h1> -->
+ 
+<div id="footer"></div>
+</body>
+</html>
+
+
+<script>
+
+// var shoe = {
+//     brand: "Nike",
+//     size:9,
+// }
+// let sneakers = Object.create(shoe)
+// sneakers.name="Abhi"
+// sneakers.price= 6969
+// // console.log(sneakers);
+
+// let vishnu = Object.create(sneakers)
+// vishnu.year=2020
+// console.log(vishnu);
+
+// let post = {
+//     status: "ab nhi krenge",
+//     like: 200,
+//     username:"anand"
+// }
+
+// function comment(name, username){
+// this.name = name;
+// this.username = username;  
+// }
+// comment.prototype = post;
+
+// let c1 = new comment("Anand is a good boy", "dheeraj")
+// let c2 = new comment("")
+// console.log(c1);
+
+// let whatsappGroup = {
+//     admin: "vishnu",
+//     date:12121995,
+// }
+
+// function newmember(name, number){
+//     this.name = name;
+//     this.number = number;
+// }
+// newmember.prototype = whatsappGroup;
+
+// let m1 = new newmember("anand", "123456789")
+// let m2 = new newmember("Dheeraj","987456321" )
+// console.log(newmember);
+
+let arr = new myarray("Vishnu" , "Anand", "Dheeraj")
+function myarray(){
+    Object.defineProperty(this, "length", {
+        value:0,
+    enumerable:false,
+    writable:true,
+    });
+    this.length = arguments.length;
+    for(let i = 0;i<this.length;i++){
+        this[i] = arguments[i]
+    }
+}
+  myarray.prototype.push = function(value) {
+    let index = this.length;
+    this[index] = value;
+    this.length++;
+}
+myarray.prototype.pop = function(value) {
+    let indexDelete = this.length-1;
+    
+    delete this[indexDelete] 
+    this.length--
+}
+
+arr.push("abhi")
+arr.push("Akshay")
+arr.pop()
+
+console.log(Object.values(arr));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// var shoe = {
+//     brand: "Nike",
+//     size:9,
+//     year:2021,
+// }
+
+// var sneakers = Object.create(shoe)
+// sneakers.price = 6969
+// sneakers.size = 8
+
+// var loafer = Object.create(sneakers)
+// loafer.material="leather"
+// loafer.glass="fibre"
+// console.log(loafer);
+
+// let post = {
+//     status: "Learning Inheritence",
+//     likes:299999,
+//     username:"Abhisingh755"
+// }
+
+// function comment(reply, username){
+//     this.reply= reply;
+//     this.username= username
+// }
+
+// comment.prototype = post;
+
+// let c1 = new comment("learned something", "abhi singh")
+// let c2 = new comment("second comment ",)
+// console.log(c1);
+// console.log(c2);
+
+// let arr = new constructorFunction("eena", "meena", "deeka")
+// let arr2 = new constructorFunction("ram", "shyam", "ghanshyam")
+// // console.log(arr);
+
+// function constructorFunction(){
+//     Object.defineProperty(this, "length", {
+//         value:0,
+//     enumerable:false,
+//     writable:true,
+//     });
+//     // console.log(arguments);
+//     this.length = arguments.length;
+
+
+// for(let i = 0; i < arguments.length; i++){
+//     this[i] = arguments[i];
+//   };
+// };
+
+// constructorFunction.prototype.push = function (value){
+//     let index = this.length;
+//     this[index] = value;
+//    this.length++;
+// };
+
+// arr.push("Vishnu")
+// constructorFunction.prototype.pop = function(value) {
+//     let indextoremove = this.length - 1;
+//     delete this[indextoremove]
+// this.length--;
+// }
+// arr2.pop()
+// // arr.pop()
+// // arr.pop()
+// // arr.pop();
+
+
+// console.log(Object.values(arr)); 
+// console.log(Object.values(arr2));
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="module">
+    import {navbar} from "./Component/navbar.js"
+    let navbar_div = document.getElementById("navbar")
+    navbar_div.innerHTML = navbar()
+    
+    import footer from "./Component/footer.js"
+    let footer_div = document.getElementById("footer");
+    footer_div.innerHTML = footer()
+    </script>
