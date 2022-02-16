@@ -24,14 +24,14 @@ function App() {
       <h1>{navbar}</h1>
       <button onClick={ changeName}>home</button>
       
-     {/* <Routes>
+     <Routes>
        <Route path="/search" element={<Search />} />
    
          
        <Route path="/home" element={<Homes/>} />
        </Routes>
        
-         */}
+        
       
       <Abc />
       <Temp />
