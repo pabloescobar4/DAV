@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+	  img{
+		  width: 30%;
+	  }
+	  #products{ 
+		border: 0px solid black;
+          margin-top:5%;
+           
+            display: grid;
+            grid-template-columns: 20% 20% 20%;
+            grid-gap: 3%;
+            justify-content: center;
+	  }
+  </style>
+  <body>
+	
+    <div id="products">
+	
+	</div>
+	<button onclick="sortLtoH()">Sort</button>
+
+    
+  </body>
+</html>
+
+<script>
+  fetch(
+    'https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=zz3ZwizJAskcjzfm4ZOC4FD6OhN9n3Es'
+  )
+    .then((response) => response.json())
+    .then((data) => new1(data));
+
+  let parent = document.getElementById('products');
+  function new1(data) {
+    const abc = data.results.books;
+    //console.log(abc);
+    abc.forEach(function (product) {
+      let div = document.createElement('div');
+      let product_desc = document.createElement('p');
+      product_desc.textContent = product.description;
+
+	  let product_title = document.createElement('p');
+      product_title.textContent = product.title;
+	  let product_cont = document.createElement('p');
+      product_cont.textContent = product.contributor;
+
+      let img = document.createElement('img'); //img is required to show img --> these are basically tag
+      img.src = product.book_image;
+
+      //console.log(product_desc);
+      div.append(img,product_title,product_cont,product_desc);
+      parent.append(div);
+    });
+  }
+
+  new1();
+  
+  function sortLtoH(data){
+	const abcd = data;
+console.log(abcd)
+    }
+	sortLtoH(data)
+	//console.log(sortLtoH(data));
+    
+</script>

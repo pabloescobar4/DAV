@@ -12,6 +12,7 @@ function App() {
         <Route path="/payment" element={<Payment />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
+      <Cart />
     </div>
   );
 }
