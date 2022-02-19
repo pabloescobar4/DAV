@@ -3,9 +3,10 @@ import { FirstName } from '../App'
 
 function CompC() {
 	return (
-		<>
-  <FirstName.Consumer>
-   {(fname) => {
+		<div>
+      	<>
+   <FirstName.Consumer>
+    {(fname) => {
 	   return <h1> My  {fname}</h1>
    }
 
@@ -16,9 +17,31 @@ function CompC() {
   </div>
 		</>
 
-		
+    </div>
 	 
 	);
   }
   
   export default CompC;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+	

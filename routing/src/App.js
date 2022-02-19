@@ -5,7 +5,7 @@ import Search from "./Search"
 import Homes from "./Homes"
 import React ,{useState} from "react"
 import { Abc } from './arrayMap';
-import { Temp } from './components/temp.jsx'
+// import { Temp } from './components/temp.jsx'
 
 function App() {
 
@@ -34,7 +34,7 @@ function App() {
         
       
       <Abc />
-      <Temp />
+      {/* <Temp /> */}
 
     </div>
   );
