@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body{
+      background-color: rgb(151, 179, 202);
+      font-style: italic;
+      font-family: 'Times New Roman', Times, serif;
+    }
+	  img{
+		  width: 30%;
+	  }
+    img{
+      padding-left: 50px;
+      width: 60%;
+    }
+    
+	  #products{ 
+		border: 0px solid black;
+          margin-top:5%;
+           
+            display: grid;
+            grid-template-columns: 20% 20% 20%;
+            grid-gap: 6%;
+            justify-content: center;
+         
+	  }
+    p{
+      font-size:15px;
+    }
+  </style>
+  <body>
+    <div id="products"></div>
+
+    <button onclick="new2()">filter</button>
+    <p></p>
+  </body>
+</html>
+
+<script>
+  fetch(
+    'https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=M8u2jVug73SCSkWeRXLL7N158Q9xUtlB'
+  )
+    .then((response) => response.json())
+    .then((data) => new1(data));
+
+  let parent = document.getElementById('products');
+//   const abc = data.results.books;
+  function new1(data) {
+
+	
+    const abc = data.results.books;
+    console.log(abc);
+    abc.forEach(function (product) {
+   
+      let div = document.createElement('div');
+      let product_desc = document.createElement('p');
+      product_desc.textContent = product.description;
+
+	  let product_title = document.createElement('h3');
+      product_title.textContent = product.title;
+    
+      let product_rank = document.createElement('p');
+      product_rank.textContent = product.rank;
+	  let product_cont = document.createElement('p');
+      product_cont.textContent = product.contributor;
+
+
+      let img = document.createElement('img'); //img is required to show img --> these are basically tag
+      img.src = product.book_image;
+
+      //console.log(product_desc);
+      div.append(img,product_title,product_rank,product_cont,product_desc);
+      parent.append(div);
+     
+    });
+   
+   
+  }
+  function new2(data) {
+    //   let prod_pub = product.publisher
+	  // array.push(prod_pub)
+    // let array = []
+    // console.log(array)
+    let arr = data;
+    console.log(arr)
+    }
+
+
+
+
+
+
+ 
+ // sortLtoH(data)
+
+</script>

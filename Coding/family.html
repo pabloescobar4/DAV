@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="./Style/style.css">
+<body>
+    <h1>My Family Tree</h1>
+    <div id="navbar"></div>
+  <!-- <h1>Import & Export</h1> -->
+<div id="footer"></div>
+</body>
+</html>
+
+
+<script>
+ var arr = new familyTree("Pramod", "Arvind", "Praveen", "Rohit")
+ var arr2 = new familyTree("Abhishek", "ravi","rajdeep",)
+// console.log(arr);
+ function familyTree(){
+Object.defineProperty(this, "length", {
+    value:0,
+    enumerable:false,
+    writable:true
+})
+    this.length = arguments.length
+    //  console.log(length);
+    for(let i = 0;i<this.length;i++){
+        this[i] = arguments[i]
+    }
+ }
+familyTree.prototype.push = function(value){
+    let index = this.length
+    this[index]= value;
+    this.length++;
+}
+familyTree.prototype.push = function(value){
+    let index2 = this.length;
+    this[index2]= value;
+    this.length++;
+}
+arr.push('raja')
+arr.push('teju')
+arr2.push('Ankit')
+arr2.push('ritesh')
+arr2.push('anurag')
+console.log(Object.values(arr));
+console.log(Object.values(arr2));
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="module">
+    import {navbar} from "./Component/navbar.js"
+    let navbar_div = document.getElementById("navbar")
+    navbar_div.innerHTML = navbar()
+    
+    import footer from "./Component/footer.js"
+    let footer_div = document.getElementById("footer");
+    footer_div.innerHTML = footer()
+    </script>

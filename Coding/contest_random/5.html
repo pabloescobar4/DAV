@@ -1,0 +1,39 @@
+<script>
+
+
+// var parents ={
+//     father:'krishna',
+//     mother:'priya'
+// }
+
+// var son = Object.create(parents)
+
+// son.name='raj'
+
+// var daughter =Object.create(parents)
+
+// daughter.name='rashmi'
+
+
+
+function son()
+{
+this.name='swanand'
+}
+
+var parents ={
+    father:'x',
+    mother:'y'
+}
+
+son.prototype = parents
+
+var s= new son()
+
+console.log(s)
+console.log(parents)
+//console.log(son)
+
+
+
+</script>
