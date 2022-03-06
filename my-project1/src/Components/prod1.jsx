@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Footer from './Footer.jsx'
 
 
 
@@ -333,7 +333,7 @@ function prod1() {
         </div>
       </div>
     </div>
-	
+	<Footer />
 	</div> );
 }
 

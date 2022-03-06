@@ -21,7 +21,7 @@ const slideImages = [
 function Prod() {
 	return ( 
 		<div>
-<div class="w-100 h-11 bg-gray-800 flex ">
+<div class="w-100 h-11 bg-gray-800 flex mt-16 ">
       <div>
         <img class="w-6 h-7 mt-1.5 ml-5" src={ham} alt="" />
       </div>
@@ -102,7 +102,7 @@ function Prod() {
               {/* <span>Slide 3</span> */}
             </div>
           </div>
-        </Slide>
+        </Slide> 
       </div>
 
 

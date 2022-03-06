@@ -113,25 +113,25 @@
   
 
 
-  let arr = "dangerouscovid"
-//   arr = arr.split("").sort((a, b) =>a-b)
-//   console.log(arr)
-  let count = 0
+//   let arr = "dangerouscovid"
+// //   arr = arr.split("").sort((a, b) =>a-b)
+// //   console.log(arr)
+//   let count = 0
 
 
-  for (let i = 0; i < arr.length; i++){
-	  let array = ""
-	  for (let j = i; j < arr.length; j++){
-		 array+=(arr[j])
-		if(array.includes("a")&&array.includes("e")&&array.includes("i")&&array.includes("o")&&array.includes("u")){
-			count++
-		}
+//   for (let i = 0; i < arr.length; i++){
+// 	  let array = ""
+// 	  for (let j = i; j < arr.length; j++){
+// 		 array+=(arr[j])
+// 		if(array.includes("a")&&array.includes("e")&&array.includes("i")&&array.includes("o")&&array.includes("u")){
+// 			count++
+// 		}
 	 
-  }
+//   }
 
-  }
+//   }
  
-	console.log(count)
+// 	console.log(count)
 //   }
   
 //   console.log(count)
@@ -160,3 +160,70 @@
 // let a =10
 // var a = 20
 // console.log(a)
+
+// const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+
+// const result = words.filter(word => word.length >= 5);
+
+// console.log(result);
+
+// const array1 = ['a', 'b', 'c'];
+// const array2 = ['d', 'e', 'f'];
+// const array4 = ['d', 'e', 'f'];
+// const array3 = array1.concat(array2,array4);
+// console.log(array3)
+
+// const ratings = [5, 4, 5];
+// let sum = 0;
+
+// const sumFunction = (a, b) => a + b;
+
+// ratings.forEach( (rating) => {
+//   sum =  sumFunction(sum, rating);
+// });
+
+// console.log(sum);
+
+// let a = 4
+// let b = 2
+
+
+
+function runProgram(input) {
+    // Write code here
+   let a = +input[0]
+   for (let i = 1; i <=a;i++){
+ 
+    for (let j = 1; j <=a;j++){
+      let arr = [];
+    arr.push(i,j)
+   
+  if(i!==j&&i<j){
+    console.log(arr.sort().join(" "))
+  }
+  
+    }
+  }
+  }
+  if (process.env.USER === "dheerajmehta") {
+    runProgram(`4 2`);
+  } else {
+    process.stdin.resume();
+    process.stdin.setEncoding("ascii");
+    let read = "";
+    process.stdin.on("data", function (input) {
+      read += input;
+    });
+    process.stdin.on("end", function () {
+      read = read.replace(/\n$/, "");
+      read = read.replace(/\n$/, "");
+      runProgram(read);
+    });
+    process.on("SIGINT", function () {
+      read = read.replace(/\n$/, "");
+      runProgram(read);
+      process.exit(0);
+    });
+  }
+  
+  
