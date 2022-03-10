@@ -1,0 +1,23 @@
+.navbar{display:flex;
+    border: 5px solid black;
+    }
+    .options{display:flex;
+    padding-left: 5%;
+    padding-right: 5%;
+    
+    }
+    .navbar h2{
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+.footer{
+    display:inline-flex;
+    justify-content: space-between;
+color:chocolate;
+
+}    
+.footer p{
+    padding-left: 25%;
+padding-right:25%;
+font-size: larger;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger</title>
+    <style>
+    *{
+        padding: 0;margin:0;box-sizing: border-box;
+    }
+    header{background-color: rgb(221, 195, 245);}
+    li{ list-style:none;}
+    a{color:rgb(12, 12, 12);text-decoration: none;}
+    .navbar{min-height:70px;display: flex;justify-content:flex-start;align-items: flex-start;padding:0 24px;}
+    .order_list{display:flex;justify-content:space-between;align-items: flex-start;gap: 60px;}
+    .nav_brand{font-size: 2rem;}
+    .nav_links{transition: 0.7s ease;}
+    .nav_links:hover{background-color: rgb(231, 247, 199);    }
+    .hamburger{display:none;cursor: pointer;}
+    .bar{display:block;width:20px;height:3px;margin:10px 3px -5px 1px;-webkit-transition: all 0.3s ease-in-out; transition:all 0.3s ease-in-out;background-color: rgb(241, 4, 4);}
+
+    @media( max-width:768px){
+        .hamburger{display:block;} 
+        .hamburger .active .bar:nth-child(2){
+            opacity: 0;
+        }
+        .hamburger .active .bar:nth-child(1){
+            transform: translateY(8px) rotate(45deg);
+        }
+        .hamburger .active .bar:nth-child(3){
+            transform: translateY(-8px) rotate(-45deg);
+        }
+        .order_list{margin:0 5px;border-radius:15px;position: fixed;left:-100%;top:70px;gap:0;flex-direction: column;background-color: rgb(255, 255, 255);width:20%;text-align: center;transition:0.3s; }
+.nav_item{margin:16px 0;}
+.order_list.active{ left:0}
+    }
+    
+    </style>
+</head>
+<body>
+<header>    
+<nav class="navbar">
+<a href="https://www.google.com" class="nav_brand" > </a>
+<ul class="order_list">
+<li class="nav_item">     <a href="#" class="nav_links">Home</a>         </li>
+<li class="nav_item">     <a href="#" class="nav_links">About</a>         </li>
+<li class="nav_item">     <a href="#" class="nav_links">Contact Us</a>         </li>
+<li class="nav_item">     <a href="#" class="nav_links">Feedback</a> </li>
+<li class="nav_item">     <a href="#" class="nav_links">Raj</a> </li>
+<li class="nav_item">     <a href="#" class="nav_links">Feed</a> </li>
+
+</ul>
+<div class="hamburger">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+
+</div>
+
+</nav>    
+</header>
+    
+
+
+</body>
+</html>
+
+<script>
+let hamburger = document.querySelector(".hamburger");
+let order_list = document.querySelector(".order_list");
+
+
+
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active")
+    order_list.classList.toggle("active")
+} )
+document.querySelectorAll(".nav_links").forEach(n => n.addEventListener("click", () => {
+    hamburger.classList.remove("active")
+    order_list.classList.remove("active")
+} ))
+</script>

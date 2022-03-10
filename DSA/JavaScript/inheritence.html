@@ -1,0 +1,58 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+
+
+</head>
+
+<body>
+
+</body>
+</html>
+<script>
+
+var shoe = {
+    brand: "Nike",
+    size:9,
+}
+let sneakers = Object.create(shoe)
+sneakers.brand="Abhi"
+sneakers.price= 3999
+console.log(sneakers);
+
+// let rahul = Object.create(sneakers)
+// rahul.marks=75
+// console.log(rahul)
+
+
+
+let whatsappGroup = {
+    admin: "vishnu",
+    date:12121995,
+}
+
+function newmember(name, number){
+    this.name = name;
+    this.number = number;
+}
+newmember.prototype = whatsappGroup;
+
+let m1 = new newmember("anand", "123456789")
+let m2 = new newmember("Dheeraj","987456321" )
+console.log(m1);
+</script>
+
