@@ -13,3 +13,16 @@
 	
 </body>
 </html>
+<script>
+	const myPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('foo');
+  }, 300);
+});
+myPromise
+.then(handleResolvedA)
+.then(handleResolvedB)
+.then(handleResolvedC)
+.catch(handleRejectedAny);
+
+</script>

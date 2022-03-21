@@ -114,7 +114,7 @@ function Prod() {
 
 
  <div class="">
-      <div class="flex space-x-4  top-48">
+      <div class="flex space-x-4  ">
         <div class="flex-1 w-72 h-1/2 bg-white p-5 pl-7 text-2xl m-3 font-bold">
           Upgrade your home | Amazon Brands & more
 
