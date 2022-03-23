@@ -8,7 +8,7 @@
   </head>
   <style>
 	  img{
-		  width: 30%;
+		  width: 100%;
 	  }
 	  #products{ 
 		border: 0px solid black;
@@ -25,49 +25,73 @@
     <div id="products">
 	
 	</div>
-	<button onclick="sortLtoH()">Sort</button>
-
+	
+  <div><button class="btn_header" onclick = "sortLtoH()"> Sort Low  High</button></div>
     
   </body>
 </html>
 
 <script>
   fetch(
-    'https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=zz3ZwizJAskcjzfm4ZOC4FD6OhN9n3Es'
+    'https://api.npoint.io/20c1afef1661881ddc9c'
   )
     .then((response) => response.json())
-    .then((data) => new1(data));
+    .then((data) =>new1(data));
 
   let parent = document.getElementById('products');
   function new1(data) {
-    const abc = data.results.books;
+    const abc = data.playerList;
     //console.log(abc);
-    abc.forEach(function (product) {
+    abc.forEach(function (player) {
       let div = document.createElement('div');
-      let product_desc = document.createElement('p');
-      product_desc.textContent = product.description;
+      let PFname = document.createElement('p');
+      PFname.textContent = player.PFName;
+      let skill = document.createElement('p');
+      skill.textContent = player.Skill
+      let SkillDesc = document.createElement('p');
+      SkillDesc.textContent = player.SkillDesc;
+     
+      let Value1 = document.createElement('p');
+      Value1.textContent = " $ "+player.Value ;
 
-	  let product_title = document.createElement('p');
-      product_title.textContent = product.title;
+  
+
+   let arr = player.Value
+ (arr.sort((a,b) => a - b))
+  
+
+//SortLtoH(data.playerList)
+
+//console.log(deleteWords.reverse())
+
+      //const res =data.playerList.filter(arr => arr.Value > 13);
+     // console.log(res)
+     
+      console.log(player.Value)
 	  let product_cont = document.createElement('p');
-      product_cont.textContent = product.contributor;
-
+      product_cont.textContent = player.contributor;
+      
+      //console.log(arr)
       let img = document.createElement('img'); //img is required to show img --> these are basically tag
-      img.src = product.book_image;
-
-      //console.log(product_desc);
-      div.append(img,product_title,product_cont,product_desc);
+      img.src = `./player-images/${player.Id}.jpg`
+      
+      let Date1= player.UpComingMatchesList[0].MDate
+      //console.log(Date1)
+      let Date2= player.UpComingMatchesList[0].VsTID
+      ///console.log(Date2)
+      //console.log(PFname);
+      div.append(img,PFname,skill,SkillDesc,Value1,);
       parent.append(div);
     });
   }
 
-  new1();
+ // new1();
   
-  function sortLtoH(data){
-	const abcd = data;
-console.log(abcd)
-    }
-	sortLtoH(data)
-	//console.log(sortLtoH(data));
+  // function sortLtoH(data){
+  //       let arr = data.playerList.sort(function(a,b){
+  //           return a.Value - b.Value;
+  //       })
+  //     (new1(arr))
+  //   }
     
 </script>
