@@ -56,9 +56,13 @@
 
   
 
-   let arr = player.Value
- (arr.sort((a,b) => a - b))
-  
+   function sortLtoH(data){
+        let arr = data.playerList.sort(function(a,b){
+            return a.Value - b.Value;
+        })
+      //(new1(arr))
+    }
+    sortLtoH(data)
 
 //SortLtoH(data.playerList)
 
@@ -87,11 +91,6 @@
 
  // new1();
   
-  // function sortLtoH(data){
-  //       let arr = data.playerList.sort(function(a,b){
-  //           return a.Value - b.Value;
-  //       })
-  //     (new1(arr))
-  //   }
+ 
     
 </script>
