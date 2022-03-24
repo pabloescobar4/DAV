@@ -39,7 +39,16 @@
     .then((data) =>new1(data));
 
   let parent = document.getElementById('products');
+  function sortLtoH(data){
+        let arr = data.playerList.sort(function(a,b){
+            return a.Value - b.Value;
+        })
+      //(new1(arr))
+    }
+
+
   function new1(data) {
+    parent.innerHTML = null
     const abc = data.playerList;
     //console.log(abc);
     abc.forEach(function (player) {
@@ -54,16 +63,9 @@
       let Value1 = document.createElement('p');
       Value1.textContent = " $ "+player.Value ;
 
-  
+      sortLtoH(data)
 
-   function sortLtoH(data){
-        let arr = data.playerList.sort(function(a,b){
-            return a.Value - b.Value;
-        })
-      //(new1(arr))
-    }
-    sortLtoH(data)
-
+ 
 //SortLtoH(data.playerList)
 
 //console.log(deleteWords.reverse())
@@ -79,9 +81,14 @@
       let img = document.createElement('img'); //img is required to show img --> these are basically tag
       img.src = `./player-images/${player.Id}.jpg`
       
-      let Date1= player.UpComingMatchesList[0].MDate
+    //  let date= player.UpComingMatchesList[0].MDate
       //console.log(Date1)
-      let Date2= player.UpComingMatchesList[0].VsTID
+    //  var now_utc =  Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(),
+ //date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
+
+ //return new Date(now_utc);
+   //   let Date2= player.UpComingMatchesList[0].VsTID
+
       ///console.log(Date2)
       //console.log(PFname);
       div.append(img,PFname,skill,SkillDesc,Value1,);
