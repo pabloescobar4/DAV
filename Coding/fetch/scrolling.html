@@ -36,22 +36,23 @@
     'https://api.npoint.io/20c1afef1661881ddc9c'
   )
     .then((response) => response.json())
-    .then((data) =>new1(data));
+    .then((data) =>sortLtoH(data.playerList));
 
   let parent = document.getElementById('products');
   function sortLtoH(data){
-        let arr = data.playerList.sort(function(a,b){
+        data = data.sort(function(a,b){
             return a.Value - b.Value;
         })
-      //(new1(arr))
+        (new1(data))
     }
 
+   // sortLtoH(data)
 
   function new1(data) {
     parent.innerHTML = null
-    const abc = data.playerList;
+   
     //console.log(abc);
-    abc.forEach(function (player) {
+  data.forEach(function (player) {
       let div = document.createElement('div');
       let PFname = document.createElement('p');
       PFname.textContent = player.PFName;
@@ -63,7 +64,7 @@
       let Value1 = document.createElement('p');
       Value1.textContent = " $ "+player.Value ;
 
-      sortLtoH(data)
+      
 
  
 //SortLtoH(data.playerList)
