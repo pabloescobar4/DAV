@@ -88,9 +88,23 @@
  //date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
 
  //return new Date(now_utc);
-   //   let Date2= player.UpComingMatchesList[0].VsTID
+ let Date2= player.UpComingMatchesList[0].MDate
 
-      ///console.log(Date2)
+console.log(Date2)
+
+ function convertUTCDateToLocalDate(date) {
+    var newDate = new Date(date.getTime()+date.getTimezoneOffset()*60*1000);
+
+    var offset = date.getTimezoneOffset() / 60;
+    var hours = date.getHours();
+
+    newDate.setHours(hours - offset);
+
+    return newDate;   
+}
+var date = convertUTCDateToLocalDate(new Date(Date2));
+date.toLocaleString();
+      
       //console.log(PFname);
       div.append(img,PFname,skill,SkillDesc,Value1,);
       parent.append(div);
