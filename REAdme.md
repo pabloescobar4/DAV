@@ -238,7 +238,7 @@ When you change one object, you change all of them.
 
 ---
 
-###### 7. What's the output?
+##### 7. What's the output?
 
 ```javascript
 let a = 3;
