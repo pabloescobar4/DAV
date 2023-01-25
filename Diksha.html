@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./Diksha.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <style> 
+   </style>
+</head>
+<body>
+    <div class="main">
+        <div class ="main_container">
+            <div>
+                <h2>Amount : 123456</h2>
+             </div>
+             <div class="bank_box" > <p>Bank Name   </p><span id="bankName" > Axis bank</span> </div>
+<div class="bank_box" > <p>Account Name   </p><span id="accName" >  Abhishek Kumar</span>  <button id="myInput" onclick="copyText0()"  title="COPY" ><i class="fa fa-copy" style="font-size:28px;"></i></button> 
+</div>
+<div class="bank_box" ><p>Account Number   </p><span id="accNo"> 87436525345765</span>  <button id="myInput" onclick="copyText1()" title="COPY" ><i class="fa fa-copy" style="font-size:28px;"></i></button> 
+
+</div>
+<div class="bank_box" >
+ <p>Swift/Ifsc  </p><span id="swiftIfsc">FGHU1234567</span>  <button id="myInput" onclick="copyText2()" title="COPY" ><i class="fa fa-copy" style="font-size:28px;"></i></button>  
+</div>
+    <div class="input_div">
+        <label > Put Correct UTR / Reference No. /Transaction Id</label>
+        <input id="impsUTR"type="text"  placeholder="Enter the UTR" name="impsUTR" required />
+        <button  onclick="getData1()"  class="btn">Submit</button>
+
+    </div>
+ 
+    <div class="imps_upi">
+        <p><span>IMPS/UPI : </span> Please fill the reference number with a 12 digits number.</p>
+        <p><span>RTGS : </span> Please fill the reference number with a 22 alphanumeric reference.</p>
+
+    </div>
+    <div class="gentleReminder">
+        <p><span>Gentle Reminder :</span> please ensure amount to deposit is the same transferred amount. Company will not be liable for missing for incorrect information.</p>
+    </div>
+    <div class="verification" >
+        <p>PLEASE VERIFY THE ACCOUNT DETAILS BEFORE MAKING A TRANSFER DEPOSIT AS THEY MAY CHANGE FROM TIME TO COMPANY WILL NOT BE RESPONSIBLE FOR ANY TRANSACTION TO AN OLD /INACTIVE ACCOUNT</p>
+    </div>
+
+          <input type="checkbox" id="helo" value="check kr diya" onchange="callFunction"/>
+
+      
+        </div>
+    </div>
+    <script>
+      function copyText0() {
+      let text = document.getElementById("accName").innerHTML;
+      /* Copy text into clipboard */
+      navigator.clipboard.writeText(text)
+          console.log("function called",text);
+  }
+  const copyText1 = () => {
+    let text = document.getElementById("accNo").innerHTML;
+      /* Copy text into clipboard */
+      navigator.clipboard.writeText(text)
+  }
+  const copyText2 = () => {
+    let text = document.getElementById("swiftIfsc").innerHTML;
+      /* Copy text into clipboard */
+      navigator.clipboard.writeText(text)
+  }
+
+  const callFunction = () => {
+      console.log("valvue" ,document.getElementById("helo").value );
+
+    if(document.getElementById("helo").checked == "true") {
+    }else{
+        console.log(document.getElementById("helo").value );
+    }
+  }
+
+
+        </script>
+</body>
+</html>
+
+
+<!-- 
+
+div id="bingoImps" class="tabBox impsBox hideBox">
+                                                <s:if test="#session.IMPS_TXN">
+                                        <script>bingoImpsdata();</script>
+                                                        <div class="container">
+                                                    <div class="container" >
+                                                        <table class="styled-table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Heading </th>
+                                                                    <th id="Heading"></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>Bank Name </td>
+                                                                    <td ></td>
+                                                                </tr>
+                                                                <tr >
+                                                                    <td>Account Name  </td>
+                                                                        <td ></td>
+                                                                </tr>
+                                                                <tr >
+                                                                    <td>Account Number  </td>
+                                                                        <td ></td>
+                                                                </tr>
+                                                                <tr >
+                                                                    <td>SWIFT / IFSC  </td>
+                                                                        <td ></td>
+                                                                </tr>
+                                                                and so on...
+                                                            </tbody>
+                                                        </table>
+                                                        <br>
+                                                    </div>
+                                                    <div class="container">
+                                                        Put correct UTR/Reference number/Trans Id
+                                                        <br>
+                                                     
+                                                        <br>
+                                                    </div>
+                                                        </div>
+                                                        </s:if>
+                                                        </div> -->

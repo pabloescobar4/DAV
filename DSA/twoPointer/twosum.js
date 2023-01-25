@@ -7,8 +7,7 @@ function twoSum(N,K,arr){
     while(left <right){
  if(arr[left] + arr[right] == K){
      let ans = (left + " " +right);
-return  (left + " " + right)
-break;
+return  ans;
  }   else if(arr[left] + arr[right] > K){
      right--;
  }else{
@@ -16,7 +15,7 @@ break;
  }
 
     }
-let elsewhere= (-1+" " +-1)
+let elsewhere= "Not Found"
 return(elsewhere);
 
 }

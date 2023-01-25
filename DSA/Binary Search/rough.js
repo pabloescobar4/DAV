@@ -12,11 +12,11 @@ function binary(A,B,low,right){
         right = mid -1
     }
 }
-return -1
+return mid
 }
 let  A = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11 ]
 A = A.sort((a, b) => a-b)
-console.log(A);
+// console.log(A);
 let B = 12;
 let low = 0;
 let right = A.length-1;
