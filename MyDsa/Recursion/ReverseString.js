@@ -6,17 +6,14 @@
 //   return ab;
 // };
 let str = "abhishek";
-const data = (str, start, end) => {
-  let temp,
-    ab = "";
-  if (start <= end) {
-    temp = str[start];
-    str[start] = str[end];
-    str[end] = temp;
-    ab += str;
-    data(str, start + 1, end - 1);
-    return ab;
+function reverse(str) {
+  if (str.length <= 1) {
+    return str;
+  } else {
+    return (
+      str.charAt(str.length - 1) + reverse(str.substring(0, str.length - 1))
+    );
   }
-};
+}
 
-console.log(data(str, 0, str.length - 1));
+console.log(reverse(str));
